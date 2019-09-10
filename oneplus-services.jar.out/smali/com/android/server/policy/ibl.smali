@@ -67,6 +67,8 @@
 
     invoke-virtual {p0, v0, v1}, Lcom/android/server/policy/OpPhoneWindowManager;->performKeyAction(ILandroid/view/KeyEvent;)V
 
+    invoke-virtual {p0, v0, v1, v1}, Lcom/android/server/policy/OpPhoneWindowManager;->performKeyAction(ILandroid/view/KeyEvent;Z)V
+
     :cond_0
     return-void
 .end method
