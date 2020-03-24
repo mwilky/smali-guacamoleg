@@ -17078,6 +17078,8 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setAlwaysOnNewNotifications(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateEdgeNotificationAnimation()V
 
     :cond_105
     const-string v0, "tweaks_always_on_notifications_timeout"
@@ -17091,6 +17093,8 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setAlwaysOnNewNotifications(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateEdgeNotificationAnimation()V
 
     :cond_106
     const-string v0, "tweaks_always_on_notifications_info"
@@ -17104,6 +17108,8 @@
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setAlwaysOnNewNotifications(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateEdgeNotificationAnimation()V
 
     :cond_107
     const-string v0, "tweaks_ambient_weather"
@@ -18089,7 +18095,7 @@
 
     iget-object v0, p0, Lcom/oneplus/systemui/statusbar/phone/OpStatusBar;->mAodDisplayViewManager:Lcom/oneplus/aod/OpAodDisplayViewManager;
     
-    invoke-virtual {v0}, Lcom/oneplus/aod/OpAodDisplayViewManager;->updateAnimation()V
+    invoke-virtual {v0}, Lcom/oneplus/aod/OpAodDisplayViewManager;->resetStatus()V
 
     return-void
 .end method
