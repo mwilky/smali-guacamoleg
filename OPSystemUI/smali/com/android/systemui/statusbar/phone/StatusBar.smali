@@ -13544,6 +13544,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setAlwaysOnNewNotifications(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setAmbientWeather(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsExpansionVibration(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -17149,6 +17151,19 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setAmbientWeather(Landroid/content/Context;)V
 
     :cond_108
+    const-string v0, "tweaks_qs_vibrate_expansion"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_109
+    
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsExpansionVibration(Landroid/content/Context;)V
+
+    :cond_109
 	return-void
 .end method
 
@@ -17674,6 +17689,10 @@
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
     
     const-string v1, "tweaks_ambient_weather"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "tweaks_qs_vibrate_expansion"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
