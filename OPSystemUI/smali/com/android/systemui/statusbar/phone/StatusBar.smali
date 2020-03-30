@@ -17897,7 +17897,7 @@
     return-void
 .end method
 
-.method protected hasActiveClearableNotifications()Z
+.method protected hasActiveHighPriorityNotifications()Z
     .locals 5
 
     iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mStackScroller:Lcom/android/systemui/statusbar/notification/stack/NotificationStackScrollLayout;
@@ -17929,8 +17929,12 @@
     move-object v4, v3
 
     check-cast v4, Lcom/android/systemui/statusbar/notification/row/ExpandableNotificationRow;
+    
+    invoke-virtual {v4}, Lcom/android/systemui/statusbar/notification/row/ExpandableNotificationRow;->getEntry()Lcom/android/systemui/statusbar/notification/collection/NotificationEntry;
 
-    invoke-virtual {v4}, Lcom/android/systemui/statusbar/notification/row/ExpandableNotificationRow;->canViewBeDismissed()Z
+    move-result-object v4
+
+    invoke-virtual {v4}, Lcom/android/systemui/statusbar/notification/collection/NotificationEntry;->isHighPriority()Z
 
     move-result v4
 
