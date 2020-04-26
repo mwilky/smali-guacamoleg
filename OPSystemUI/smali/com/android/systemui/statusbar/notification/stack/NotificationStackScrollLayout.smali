@@ -8476,7 +8476,7 @@
 .end method
 
 .method private updateBackgroundDimming()V
-    .locals 3
+    .locals 4
     
     sget-boolean v0, Lcom/android/mwilky/Renovate;->mUnlockNotificationColors:Z
     
