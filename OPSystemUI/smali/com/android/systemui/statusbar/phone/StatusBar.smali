@@ -13590,6 +13590,8 @@
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setFpIconColors(Landroid/content/Context;)V
     
     invoke-static {v0}, Lcom/android/mwilky/Renovate;->setQsScrimColors(Landroid/content/Context;)V
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setClockSeconds(Landroid/content/Context;)V
 
     const-class v0, Lcom/android/systemui/statusbar/phone/NotificationGroupManager;
 
@@ -17555,6 +17557,21 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateHybridNotificationView()V
 
     :cond_132
+    const-string v0, "tweaks_clock_seconds"
+    
+    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_133
+
+    iget-object v0, p0, Lcom/android/systemui/statusbar/phone/StatusBar;->mContext:Landroid/content/Context;
+    
+    invoke-static {v0}, Lcom/android/mwilky/Renovate;->setClockSeconds(Landroid/content/Context;)V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateClockView()V
+
+    :cond_133
 	return-void
 .end method
 
@@ -18178,6 +18195,10 @@
     const-string v1, "tweaks_color_media_notif_text"
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    
+    const-string v1, "tweaks_clock_seconds"
+
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 166
     new-instance v1, Lcom/android/wubydax/GearContentObserver;
@@ -18291,7 +18312,7 @@
     
     invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->readRenovateMods()V
     
-    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->printCustomClock()V
+    invoke-virtual {v0}, Lcom/android/systemui/statusbar/policy/Clock;->updateShowSeconds()V
     
     :cond_header
     const-string v0, "header"
