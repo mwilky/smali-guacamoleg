@@ -15838,6 +15838,10 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationTextColors()V
     
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateHybridNotificationView()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateLockscreenStatusbarViews()V
 
     :cond_mwilky21
     const-string v0, "oem_white_mode_accent_color"
@@ -15865,6 +15869,10 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationTextColors()V
     
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateHybridNotificationView()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateLockscreenStatusbarViews()V
 
     :cond_mwilky22
     const-string v0, "oem_black_mode"
@@ -15892,6 +15900,10 @@
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateNotificationTextColors()V
     
     invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateHybridNotificationView()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateStatusbarIconViews()V
+    
+    invoke-virtual {p0}, Lcom/android/systemui/statusbar/phone/StatusBar;->updateLockscreenStatusbarViews()V
 
     :cond_mwilky23
     const-string v0, "tweaks_hide_lockscreen_statusbar"
